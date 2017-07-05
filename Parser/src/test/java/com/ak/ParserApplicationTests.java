@@ -41,7 +41,7 @@ public class ParserApplicationTests {
     }
 
     @Test
-    public void checkInvalidData() {
+    public void invalidData() {
         try {
             MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
             mockMvc.perform(fileUpload("/upload"))
@@ -53,7 +53,7 @@ public class ParserApplicationTests {
     }
 
     @Test
-    public void checkValidData(){
+    public void validData(){
         try {
             final File file = new ClassPathResource("testfile.txt").getFile();
             MockMultipartFile first = new MockMultipartFile("files","testfile.txt", "text/plain", new FileInputStream(file));
@@ -66,7 +66,7 @@ public class ParserApplicationTests {
     }
 
     @Test
-    public void checkParsedResponse(){
+    public void getData(){
         try {
             final File file = new ClassPathResource("testfile.txt").getFile();
             MockMultipartFile first = new MockMultipartFile("files","testfile.txt", "text/plain", new FileInputStream(file));
